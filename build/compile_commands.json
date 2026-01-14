@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/anonymous/Documents/leBrowser/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/QTWEBENGINE_OWNBROWSERVERSION.dir/main.cpp.o -c /home/anonymous/Documents/leBrowser/main.cpp",
-  "file": "/home/anonymous/Documents/leBrowser/main.cpp",
-  "output": "CMakeFiles/QTWEBENGINE_OWNBROWSERVERSION.dir/main.cpp.o"
-}
-]
