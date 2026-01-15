@@ -1,2 +1,0 @@
-Test commit for VS Code git add
-Test commit
