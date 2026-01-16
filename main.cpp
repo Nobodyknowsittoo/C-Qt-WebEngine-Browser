@@ -1,17 +1,32 @@
 #include <QApplication>
-#include <QWebEngineView>
+#include <QMainWindow>
+#include <QToolBar>
+#include <QAction>
+#include <QIcon>
+#include <QUrl>
+#include <QObject>
+#include <QtWebEngineWidgets/QWebEngineView>
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    QWebEngineView view;
-    view.page()->triggerAction(QWebEnginePage::Back);
-    view.page()->triggerAction(QWebEnginePage::Forward);
-    view.page()->triggerAction(QWebEnginePage::InspectElement);
-    view.setUrl(QUrl("https://www.qt.io"));
-    view.resize(1024, 768);
-    view.show();
+    QMainWindow window;
+
+    QWebEngineView *view = new QWebEngineView(&window);
+    view->setUrl(QUrl("https://www.qt.io"));
+    window.setCentralWidget(view);
+
+    QToolBar *navtb = new QToolBar("Navigation", &window);
+    window.addToolBar(navtb);
+
+    QAction *back_btn = new QAction(QIcon("back.png"), "Back", &window);
+
+    QObject::connect(back_btn, &QAction::triggered, view, &QWebEngineView::back);
+    navtb->addAction(back_btn);
+
+    window.resize(1024, 768);
+    window.show();
 
     return app.exec();
 }
