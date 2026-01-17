@@ -16,7 +16,7 @@ qt_add_executable(QtWebEngineBrowser
 qt_add_resources(QtWebEngineBrowser resources
     PREFIX "/assets"
     FILES
-        assets/reload_btn.png
+        assets/reload_btn_small.png
 )
 
 target_link_libraries(QtWebEngineBrowser
