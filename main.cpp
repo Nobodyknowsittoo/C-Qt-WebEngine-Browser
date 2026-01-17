@@ -22,9 +22,9 @@ int main(int argc, char *argv[])
     window.addToolBar(navtb);
 
     //Initializing navigationButtons
-    QAction *back_btn = new QAction(QIcon("back.png"), "Back", &window);
-    QAction *forward_btn = new QAction(QIcon("back.png"), "Forward", &window);
-    QAction *reload_btn = new QAction(QIcon("back.png"), "Reload", &window);
+    QAction *back_btn = new QAction(QIcon("qrc:/assets/reload_btn.png"), "Back", &window);
+    QAction *forward_btn = new QAction(QIcon("qrc:/assets/reload_btn.png"), "Forward", &window);
+    QAction *reload_btn = new QAction(QIcon("qrc:/assets/reload_btn.png"), "Reload", &window);
 
     //connecting navigationButtons and adding them to the navbar
     QObject::connect(back_btn, &QAction::triggered, view, &QWebEngineView::back);

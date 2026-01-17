@@ -7,7 +7,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets WebEngineWidgets)
 
-add_executable(QtWebEngineBrowser main.cpp)
+qt_standard_project_setup()
+
+qt_add_executable(QtWebEngineBrowser
+    main.cpp
+)
+
+qt_add_resources(QtWebEngineBrowser resources
+    PREFIX "/assets"
+    FILES
+        assets/reload_btn.png
+)
 
 target_link_libraries(QtWebEngineBrowser
     PRIVATE Qt6::Widgets Qt6::WebEngineWidgets
