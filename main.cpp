@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
 
     //adding Toolbar
     QToolBar *navtb = new QToolBar("Navigation", &window);
+    navtb->setMovable(false); 
     window.addToolBar(navtb);
 
     //initializing navigationButtons
